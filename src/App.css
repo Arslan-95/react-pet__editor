@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
   min-height: 100vh;
+  font-family: Arial;
+}
+
+.editor {
+  display: flex;
+  width: 80%;
+  min-height: 80vh;
+  justify-content: space-between;
+}
+
+.editor-sidebar {
+  width: 25%;
+}
+
+.editor-workarea,
+.editor-sidebar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-sizing: border-box;
+  padding: 30px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.editor-workarea {
+  width: 70%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.editor-sidebar,
+.editor-workarea {
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.editor-sidebar .editor__item {
+  border: 1px solid #000;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: move;
+}
+
+.editor__image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editor-workarea .editor__item {
+  max-width: 50%;
+  margin: 10px 0;
+}
+
+.editor__workarea .editor__item img,
+.editor__workarea .editor__item textarea {
+  max-width: 100%;
 }
