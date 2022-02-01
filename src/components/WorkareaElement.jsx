@@ -1,8 +1,8 @@
 import Image from "./Image";
 
-function DragElement(props) {
-  const { position = "sidebar", id, onDragStart } = props;
-  const name = props.name || '';
+function WorkareaElement(props) {
+  const { id } = props;
+  const name = props.name || "";
 
   function readAndWriteElement(name) {
     const filteredName = name.toLowerCase();
@@ -20,12 +20,10 @@ function DragElement(props) {
     <div
       id={id}
       className="editor__item"
-      draggable={position === "sidebar" ? true : false}
-      onDragStart={onDragStart}
     >
-      {position !== "sidebar" ? readAndWriteElement(name) : name}
+      {readAndWriteElement(name)}
     </div>
   );
 }
 
-export default DragElement;
+export default WorkareaElement;

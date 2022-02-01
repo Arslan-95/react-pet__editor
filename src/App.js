@@ -3,7 +3,7 @@ import "./App.css";
 
 const editorElements = [
   { id: 1, name: "text" },
-  { id: 2, name: "image" },
+  { id: 2, name: "image" }
 ];
 
 function App() {

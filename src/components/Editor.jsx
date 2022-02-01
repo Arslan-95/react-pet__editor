@@ -1,6 +1,7 @@
 import React from "react";
 import uuid from "react-uuid";
-import DragElement from "./DragElement";
+import Sidebar from "./Sidebar";
+import Workarea from "./Workarea";
 
 function Editor(props) {
   const [dragElements, setDragElements] = React.useState({
@@ -46,34 +47,12 @@ function Editor(props) {
 
   return (
     <div className="editor">
-      <div className="editor__sidebar editor-sidebar">
-        <h3 className="title">Sidebar</h3>
-        {dragElements.sidebar.map((item) => (
-          <DragElement
-            key={item.id}
-            id={`editor__item${item.id}`}
-            position="sidebar"
-            name={item.name}
-            onDragStart={takeElement}
-          />
-        ))}
-      </div>
-      <div
-        className="editor__workarea editor-workarea"
-        onDragOver={(event) => event.preventDefault()}
+      <Sidebar elements={dragElements.sidebar} onDragStart={takeElement} />
+      <Workarea
+        elements={dragElements.workarea}
+        onChange={setWorkareaState}
         onDrop={setElementToWorkArea}
-      >
-        <h3 className="title">Workarea</h3>
-        {dragElements.workarea.map((item) => (
-          <DragElement
-            key={item.id}
-            id={item.id}
-            onChange={setWorkareaState}
-            name={item.name}
-            position="workarea"
-          />
-        ))}
-      </div>
+      />
     </div>
   );
 }
