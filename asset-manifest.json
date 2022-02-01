@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-pet__editor/static/css/main.35738923.css",
+    "main.js": "/react-pet__editor/static/js/main.68bd5ea4.js",
+    "index.html": "/react-pet__editor/index.html",
+    "main.35738923.css.map": "/react-pet__editor/static/css/main.35738923.css.map",
+    "main.68bd5ea4.js.map": "/react-pet__editor/static/js/main.68bd5ea4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35738923.css",
+    "static/js/main.68bd5ea4.js"
+  ]
+}
