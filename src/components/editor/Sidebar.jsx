@@ -5,15 +5,13 @@ function Sidebar({ elements, onDragStart }) {
   return (
     <div className="editor__sidebar editor-sidebar">
       <h3 className="title">Sidebar</h3>
-      {elements.map(({id, name}, index) => (
-        <>
-          <SidebarElement
-            key={index}
-            id={`editor__item${id}`}
-            name={name}
-            onDragStart={onDragStart}
-          />
-        </>
+      {elements.map(({ id, name }, index) => (
+        <SidebarElement
+          key={index}
+          id={`editor__item${id}`}
+          name={name}
+          onDragStart={onDragStart}
+        />
       ))}
     </div>
   );

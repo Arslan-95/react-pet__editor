@@ -1,7 +1,7 @@
 import React from "react";
 import uuid from "react-uuid";
-import Sidebar from "./Sidebar";
-import Workarea from "./Workarea";
+import Sidebar from "./editor/Sidebar";
+import Workarea from "./editor/Workarea";
 
 function Editor(props) {
   const [dragElements, setDragElements] = React.useState({
@@ -12,8 +12,7 @@ function Editor(props) {
   const [currentElement, setCurrentElement] = React.useState({});
 
   const setElementToWorkArea = () => {
-    console.log(currentElement);
-    const workarea = dragElements.workarea;
+    const workarea = [...dragElements.workarea];
     const element = currentElement;
 
     if (!element) {
