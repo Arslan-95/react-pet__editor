@@ -12,19 +12,16 @@ function Editor(props) {
   const [currentElement, setCurrentElement] = React.useState({});
 
   const setElementToWorkArea = () => {
-    const workarea = [...dragElements.workarea];
     const element = currentElement;
 
     if (!element) {
       return;
     }
 
-    workarea.push({ ...element, id: uuid() });
-
     // Add workarea to state
     setDragElements((state) => ({
       ...state,
-      workarea,
+      workarea: state.workarea.concat({ ...element, id: uuid() }),
     }));
 
     // clean current element.
