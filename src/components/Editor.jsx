@@ -21,7 +21,7 @@ function Editor(props) {
     // Add workarea to state
     setDragElements((state) => ({
       ...state,
-      workarea: state.workarea.concat({ ...element, id: uuid() }),
+      workarea: [...state.workarea, { ...element, id: uuid() }],
     }));
 
     // clean current element.
